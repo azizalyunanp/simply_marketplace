@@ -1,0 +1,11 @@
+{
+    "background.enabled": true,
+    "background.useDefault": false,
+    "background.customImages": [
+        "F:/JIJULZZ/JAPAAAN/48/mayu/4bcc3f41b19efda892829433369d3c95.jpg"
+    ],
+    "background.style": {
+        "background-position": "100% 100%",
+        "background-repeat": "no-repeat"
+    }
+}
