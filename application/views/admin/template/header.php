@@ -3,7 +3,7 @@
    <head>
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
       <meta charset="utf-8" />
-      <title>ADMIN TOKO BUKU RAHMA</title>
+      <title>MARKETPLACE ADMINISTRATOR</title>
       <meta name="description" content="Aplikasi Administrasi Bengkel" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
       <!-- bootstrap & fontawesome -->
@@ -28,12 +28,14 @@
       <script type="text/javascript" src="<?=base_url();?>assets/js/tinymce/tinymce.min.js"></script>
       <script type="text/javascript" src="<?=base_url();?>assets/js/tinymce/jquery.tinymce.min.js"></script>
       <?php 
+      if(isset($css_files)) {
       foreach($css_files as $file): ?>
       <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
       <?php endforeach; ?>
       <?php foreach($js_files as $file): ?>
       <script src="<?php echo $file; ?>"></script>
-      <?php endforeach; ?>
+      <?php endforeach;
+      } ?>
       <script>tinymce.init({ selector:'textarea' });</script>
    </head>
    <body class="no-skin">
@@ -50,7 +52,7 @@
             <a href="#" class="navbar-brand">
                <small>
                   <i class="fa fa-books"></i>
-                  ADMIN TOKO BUKU RAHMA
+                  MARKETPLACE ADMINISTRATOR
                </small>
             </a>
          </div>
@@ -62,7 +64,7 @@
                      <img class="nav-user-photo" src="<?=base_url();?>assets/images/user.png" />
                      <span class="user-info">
                         <small>Welcome,</small>
-                           
+                           <?=$this->session->userdata('username');?>
                      </span>
 
                      <i class="ace-icon fa fa-caret-down"></i>
@@ -73,7 +75,7 @@
                      <li class="divider"></li>
 
                      <li>
-                        <a href="logout.php">
+                        <a href="<?=site_url('admin/logout');?>">
                            <i class="ace-icon fa fa-power-off"></i>
                            Logout
                         </a>
@@ -89,8 +91,9 @@
 <div class="main-container" id="main-container">
 <div id="sidebar" class="sidebar responsive">
    <ul class="nav nav-list">
-      <li><a href="<?=site_url('admin/product');?>"><i class="menu-icon fa fa-caret-right"></i>Products</a></li>
+      <li><a href="<?=site_url('admin/users');?>"><i class="menu-icon fa fa-caret-right"></i>Users</a></li>
       <li><a href="<?=site_url('admin/category');?>"><i class="menu-icon fa fa-caret-right"></i>Category</a></li>
+      <li><a href="<?=site_url('admin/logout');?>"><i class="menu-icon fa fa-sign-out"></i>Logout</a></li>
    </ul>
    <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
       <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>

@@ -1,119 +1,181 @@
-<!-- //footer -->
-<div class="footer">
-      <div class="container">
-         <div class="w3_footer_grids">
-            <div class="col-md-3 w3_footer_grid">
-               <h3>Contact</h3>
-               
-               <ul class="address">
-                  <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
-                     Jl. Kebangkitan Nasional, Toko Buku No. 21-22
-                     Belakang Sriwedari, Solo, Jawa Tengah, Indonesia.
-                  </li>
-                  <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>tokobukuantik@gmail.com</li>
-                  <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+0271-7655232</li>
-                  <li><i class="fa fa-whatsapp"></i> 085725363887</li>
-               </ul>
+<footer>
+        <div class="row">
+            <div class="col-md-4 footer-about">
+                <h4>Tentang Kami</h4>
+                <p> Dengan marketplace memudahkan dalam hal bertransaksi online
+                </p>
+                <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
             </div>
-            <div class="col-md-3 w3_footer_grid">
-               <h3>Information</h3>
-               <ul class="info"> 
-                  <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="#">Tentang Kami</a></li>
-                  <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="#">Kontak </a></li>
-                   <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="#">Cara Order</a></li>
-               </ul>
-            </div>
-            <div class="col-md-3 w3_footer_grid">
-               <h3>Category</h3>
-               <ul class="info"> 
-                  <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="#">Buku Baru</a></li>
-                  <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="#">Buku Bekas</a></li>
-                  <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="#">Mainan</a></li>
-                  <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="#">Alat Peraga</a></li>
-               </ul>
-            </div>
-            <div class="col-md-3 w3_footer_grid">
-               <h3>Profile</h3>
-               <ul class="info"> 
-                  <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="checkout.html">Keranjang Saya</a></li>
-                  <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="login.html">Login</a></li>
-                  <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="registered.html">Daftar Baru</a></li>
-               </ul>
-            </div>
-            <div class="clearfix"> </div>
-         </div>
-      </div>
-      
-      <div class="footer-copy">
-         
-         <div class="container">
-            <p>© 2017 TOKO BUKU RAHMA. All rights reserved</p>
-         </div>
-      </div>
-      
-   </div>   
-   <div class="footer-botm">
-         <div class="container">
-            <div class="w3layouts-foot">
-               <ul>
-                  <li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                  <li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                  <li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                  <li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-               </ul>
-            </div>
-            <div class="clearfix"> </div>
-         </div>
-      </div>
-<!-- //footer --> 
-<script src="<?=base_url();?>assets/js/jquery-3.2.1.js"></script>
-<!-- start-smoth-scrolling -->
-<script type="text/javascript" src="<?=base_url();?>assets/js/move-top.js"></script>
-<script type="text/javascript" src="<?=base_url();?>assets/js/easing.js"></script>
+        </div>
+    </footer>
+    <script src="<?=base_url();?>assets/js/jquery.min.js"></script>
+    <script src="<?=base_url();?>assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?=base_url();?>assets/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="<?=base_url('assets/js/sweetalert.min.js');?>"></script>
+    <script type="text/javascript" src="<?=base_url('assets/js/pikaday-responsive-modernizr.js');?>"></script>
+    <script type="text/javascript" src="<?=base_url('assets/js/pikaday-package.min.js');?>"></script>
+    <script type="text/javascript">
+    var $date1 = $("#tanggal");
+    var instance1 = pikadayResponsive($date1);
+    $(document).ready(function(){
 
-<!-- Bootstrap Core JavaScript -->
-<script src="<?=base_url();?>assets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<?=base_url('assets/js/sweetalert.min.js');?>"></script>
-<script type="text/javascript" src="<?=base_url('assets/js/sweetalert-dev.js');?>"></script>
-<!-- top-header and slider -->
-<!-- here stars scrolling icon -->
+        $('#user_product').DataTable({ 
+        "processing": true, 
+        "serverSide": true, 
+        "order": [], 
+        "ajax": {
 
-<!-- main slider-banner -->
-<script src="<?=base_url();?>assets/js/skdslider.min.js"></script>
-<link href="<?=base_url();?>assets/css/skdslider.css" rel="stylesheet">
-<script type="text/javascript">
-      jQuery(document).ready(function(){
-         jQuery('#demo1').skdslider({'delay':5000, 'animationSpeed': 2000,'showNextPrev':true,'showPlayButton':true,'autoSlide':true,'animationType':'fading'});
-                  
-         jQuery('#responsive').change(function(){
-           $('#responsive_wrapper').width(jQuery(this).val());
-         });
-      });
-</script>   
-<!-- //main slider-banner --> 
+            "url": "<?=base_url('home/ajax_user_product');?>",
+            "type": "POST"
+        },
+        "columnDefs": [
+        { 
+            "targets": [ 0 ], 
+            "orderable": false,
+        },
+        ],
 
-<!--MY JS-->
-<script>
-$(document).ready(function () {
-   $(".scroll").click(function(event){    
-         event.preventDefault();
-         $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-      });
-});
-</script>
+        });
 
-<script type="text/javascript">
-   function tambah_cart(id) {
-      $.ajax({
-         method   : 'POST',
-         url      : '<?=site_url("home/add_cart");?>',
-         data     : "id_product=" + id + "&qty=" + $('#qty_'+id).val() + "&item_name=" + $('#nm_brg_'+id).val() + "&price=" + $('#price_'+id).val(),
-         dataType : 'text',
-      success:function(data) {
-         swal("Success", "Cart berhasil ditambahkan", "success")
-      }
-      });
-   }
-</script>
+        $("#p_asal").click(function(){ //API RAJA ONGKIR PROVINCE
+            $.post("<?php echo base_url(); ?>transaction/get_city/"+$('#p_asal').val(),function(obj){
+                $('#c_asal').html(obj);
+            });
+        }); 
+
+    })
+
+
+    function harga_product() {
+        $('#harga').val(convertToRupiah($('#harga_dup').val().replace(".","") * $('#qty').val()));
+        cost_ship();
+    }
+
+    function cost_ship() {
+        var harga   = $('#harga').val().replace(".","");
+        var bayar   = $('#bayar').val();
+        $.ajax({
+            method  : 'POST',
+            url     : "<?=base_url();?>transaction/get_cost",
+            data    : "origin=" + $('#city').val() + "&weight=" +  $('#berat').val() + "&courier=" +
+            $('#kurir option:selected').val() + "&type=" + $('#type option:selected').val(),
+            dataType:'text',
+            success : function(data) {
+                $('#ongkir').val(data);
+                $('#bayar').val(convertToRupiah(parseInt(harga) + parseInt(data.replace(".",""))));
+            }
+        })
+    }
+
+    function convertToRupiah(angka) {
+        var rupiah = '';    
+        var angkarev = angka.toString().split('').reverse().join('');
+        for(var i = 0; i < angkarev.length; i++) 
+          if(i%3 == 0) rupiah += angkarev.substr(i,3)+'.';
+        return rupiah.split('',rupiah.length-1).reverse().join('');
+    }
+
+    function update_profile() {
+        $.ajax({
+            method  : 'POST',
+            url     : "<?=base_url();?>home/update_profile",
+            data    : "tgl_lahir=" + $('#tanggal').val() + "&provinsi=" + $('#p_asal option:selected').text() +
+            "&id_province=" + $('#p_asal option:selected').val() + "&city=" + $('#c_asal option:selected').text() + "&id_city=" + $('#c_asal option:selected').val() + "&alamat=" + $('#alamat').val() + "&rek_bank=" + $('#rek_bank option:selected').val() + "&no_rek=" + $('#no_rek').val(),
+            dataType : 'text',
+            success : function(data) {
+                sweetAlert("Success", "Data berhasil Disimpan", "success");
+                setTimeout(function(){     
+                window.location = "<?php echo base_url('home');?>";
+            }, 3000); 
+            }
+        })
+    }
+
+    function add_store() {
+        $.ajax({
+            method  : 'POST',
+            url     : "<?=base_url();?>home/new_store",
+            data    : "nama_toko=" + $('#nama_toko').val() + "&provinsi=" + $('#p_asal option:selected').text() +
+            "&id_province=" + $('#p_asal option:selected').val() + "&city=" + $('#c_asal option:selected').text() + "&id_city=" + $('#c_asal option:selected').val() + "&deskripsi=" + $('#deskripsi').val() + "&status=" + $('#status option:selected').val() + "&alamat=" + $('#alamat').val(),
+            dataType : 'text',
+            success : function(data) {
+                sweetAlert("Success", "Data berhasil Disimpan", "success");
+                setTimeout(function(){     
+                    window.location = "<?php echo base_url('home');?>";
+                }, 3000); 
+            }
+        })
+    }
+
+    function modal_cart() {
+        var sess  = $('#sess').val();
+        if(sess == "belum_log") {
+            sweetAlert("Oops...", "Login terlebih dahulu !", "error");
+            window.location = "<?=base_url('login');?>";
+        } else {
+            $('#modalcart').modal("show");
+        }
+    }
+
+    function add_cart() {
+        var kurir = $('#kurir option:selected').val();
+
+        if(kurir == "") {
+            sweetAlert("Oops...", "Pilih kurir terlebih dahulu !", "error");
+        } else {
+        $.ajax({
+            method  : 'POST',
+            url     : "<?=base_url();?>transaction/add_cart",
+            data    : "id_toko=" + $('#toko_id').val() + "&id_brg=" + $('#id_brg').val() + "&nama_brg=" + $('#nama_brg').val() + "&qty=" + $('#qty').val() + "&harga=" + $('#harga').val() + "&keterangan=" + $('#keterangan').val() + "&kurir="+ $('#kurir option:selected').text() + "&service=" + $('#type option:selected').text() + "&ongkir=" + $('#ongkir').val(),
+            dataType: 'text',
+
+            success : function(data) {
+               sweetAlert("Add cart", "Cart berhasil ditambahkan", "success");
+               $('#modalcart').modal("hide");
+            }
+        })
+        }
+    }
+
+    function hapus_cart(id) {
+        swal({
+          title: "Hapus Item?",
+          text: "Hapus item keranjang ??",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "Ya",
+          closeOnConfirm: false
+        },
+        function(){
+            window.location = "<?=base_url('transaction/delete_cart/');?>" + id;
+            swal("Deleted!", "Item berhasil dihapus", "success");
+        });
+    }
+
+    function change_bayar() {
+        var no_rek = $('#no_rek').val();
+        if (no_rek == "") { 
+            sweetAlert("NO REK", "No Rekening harus di isi ! ! !", "warning");
+        } else {
+        $.ajax({
+            method  : 'POST',
+            url     : "<?=base_url();?>transaction/change_bayar",
+            data    : "rek_bank=" + $('#rek_bank option:selected').val() + "&no_rek=" +
+            $('#no_rek').val(),
+            dataType : 'text',
+            success:function(data) {
+                sweetAlert("Ganti Pembayaran", "Ganti Pembayaran Berhasil", "success");
+                setTimeout(function(){     
+                    window.location = "<?php echo base_url('checkout');?>";
+                }, 3000); 
+            }
+        })
+        }
+    }
+
+    </script>
 </body>
+
 </html>
+jok0u8765555555t

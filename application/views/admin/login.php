@@ -27,11 +27,10 @@ if($this->session->has_userdata('username')) {
             <div class="login-container">
             <div class="center">
                 <h1>
-                  <i class="ace-icon fa fa-car green"></i>
-                  <span class="red">Aplikasi</span>
-                  <span class="white" id="id-text2">Bengkel</span>
+                  <i class="ace-icon fa fa-book green"></i>
+                  <span class="red">Toko Buku</span>
+                  <span class="white" id="id-text2">Rahma</span>
                 </h1>
-                <h4 class="blue" id="id-company-text">&copy; dr. AKI</h4>
               </div>
             <br>
               <div class="space-6"></div>
@@ -47,7 +46,7 @@ if($this->session->has_userdata('username')) {
 
                       <div class="space-6"></div>
 
-                      <form method="post" action="<?php echo base_url();?>main/login">
+                      <form method="post" action="<?php echo base_url();?>admin/get_login">
                         <fieldset>
                           <label class="block clearfix">
                             <span class="block input-icon input-icon-right">
@@ -64,7 +63,6 @@ if($this->session->has_userdata('username')) {
                           </label>
                           
                           <div class="space"></div>
-                          <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
                           <div class="clearfix">
                             <button type="submit" class="width-35 pull-right btn btn-sm btn-primary" name="login">
                               <i class="ace-icon fa fa-key"></i>

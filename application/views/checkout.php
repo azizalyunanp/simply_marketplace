@@ -1,69 +1,77 @@
-<!-- breadcrumbs -->
-   <div class="breadcrumbs">
-      <div class="container">
-         <ol class="breadcrumb breadcrumb1">
-            <li><a href="<?=base_url('home');?>"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
-            <li class="active">Checkout Page</li>
-         </ol>
+    <div class="row register-form">
+        <div class="col-md-8 col-md-offset-2">
+            <form class="form-horizontal custom-form" method="post" action="<?=site_url('transaction/save_trans');?>">
+                <h1>Checkout</h1>
+                <div class="form-group">
+                    <div class="col-sm-4 label-column">
+                        <label class="control-label" for="name-input-field">TOTAL BAYAR</label>
+                    </div>
+                    <div class="col-sm-6 input-column">
+                        <div class="p-header">Rp <?=number_format($total['total_bayar'],0,",",".");?></div>
+                        <input class="form-control" type="hidden" readonly="true" autocomplete="off" name="bayar" value="<?=$total['total_bayar'];?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4 label-column">
+                        <label class="control-label" for="email-input-field">REK. BANK</label>
+                    </div>
+                    <div class="col-sm-6 input-column">
+                        <input type="text" name="rek_bank" class="form-control" value="<?=$bayar['rek_bank'];?>" readonly="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4 label-column">
+                        <label class="control-label" for="pawssword-input-field">NO REK</label>
+                    </div>
+                    <div class="col-sm-6 input-column">
+                        <input class="form-control" type="number" readonly="true"  autocomplete="off" name="no_rek" value="<?=$bayar['no_rek'];?>">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-warning btn-lg" data-target="#myModal" data-toggle="modal"><i class="fa fa-pencil"></i> Ganti Pembayaran</button>
+                <button class="btn btn-default submit-button" type="submit"><i class="fa fa-check"></i> CHECKOUT </button>
+            </form>
+        </div>
+    </div>
+
+    <!--MODAL GANTI PEMBAYARAN-->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Ganti Pembayaran</h4>
       </div>
-   </div>
-<!-- //breadcrumbs -->
-<!-- checkout -->
-   <div class="checkout">
-      <div class="container">
-         <h2>Your shopping cart : <span><?=count($this->cart->contents());?> Products</span></h2>
-         <div class="checkout-right">
-            <table class="timetable_sub">
-               <thead>
-                  <tr>
-                     <th>No Trans.</th>   
-                     <th>Produk</th>
-                     <th>Nama Produk</th>
-                     <th>Juml. Beli</th>
-                     <th>Harga</th>
-                     <th>SubTotal</th>
-                     <th>Hapus</th>
-                  </tr>
-               </thead>
-               <tbody>
-               <?php 
-               $no = 1;
-               foreach ($this->cart->contents() as $items) { ?>
-                  <tr class="rem1">
-                     <td class="invert"><?=$no++;?></td>
-                     <td class="invert-image"><img src="<?=base_url();?>assets/img/products/1.jpg" alt=" " class="img-responsive" /></td>
-                     <td class="invert"><?=$items['name'];?></td>
-                     <td class="invert">
-                         <div class="quantity"> 
-                           <div class="quantity-select">                           
-                              <a href='<?=site_url("home/min_cart/$items[rowid]/$items[qty]");?>'><div class="entry value-minus active"></div></a>
-                              <div class="entry value"><span><?=$items['qty'];?></span></div>
-                              <a href='<?=site_url("home/plus_cart/$items[rowid]/$items[qty]");?>'><div class="entry value-plus active"></div></a>
-                           </div>
-                        </div>
-                     </td>
-                     <td class="invert">Rp <?=number_format($items['price'],0,".",".");?></td>
-                     <td class="invert">Rp <?=number_format($items['qty']*$items['price'],0,".",".");?></td>
-                     <td class="invert">
-                       <a class="btn btn-danger" href='<?=site_url("home/del_cart/$items[rowid]");?>'><i class="fa fa-trash"></i></a>
-                     </td>
-                  </tr>
-               <?php } ?>
-               </tbody>
-            </table>
-         </div>
-         <div class="checkout-left">   
-            <div class="checkout-left-basket">
-               <a href=""><h4>LANJUTKAN PEMESANAN</h4></a>
-               <ul>
-                  <li>Total <i>-</i> <span>Rp <?=number_format($this->cart->total(),0,".",".");?></span></li>
-               </ul>
+       <form class="form-horizontal" >
+      <div class="modal-body">
+            <div class="form-group">
+                <label class="col-sm-4">REK. BANK</label>
+                <div class="col-sm-4">
+                    <select class="form-control" name="rek_bank" id="rek_bank">
+                        <option>BCA</option>
+                        <option>BNI</option>
+                        <option>MANDIRI</option>
+                        <option>BRI</option>
+                     </select>
+                </div>
             </div>
-            <div class="checkout-right-basket">
-               <a href="#"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>LANJUT BELANJA</a>
+            <div class="form-group">
+                <label class="col-sm-4">NO REK</label>
+                <div class="col-sm-6">
+                     <input type="number" class="form-control" name="rek_bank" id="no_rek" required="true" >
+                </div>  
             </div>
-            <div class="clearfix"> </div>
-         </div>
+
       </div>
-   </div>
-<!-- //checkout -->
+      <div class="modal-footer">
+        <a class="btn btn-primary" onclick="change_bayar()">SIMPAN</a>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+<!--END MODAL-->

@@ -2,8 +2,8 @@
    <div class="footer-inner">
       <div class="footer-content">
          <span class="bigger-120">
-            <span class="blue bolder">ADMIN TOKO BUKU RAHMA</span>
-            Application &copy; 2017
+            <span class="blue bolder">ADMINISTRATOR</span>
+            Application <?=date('Y');?>
          </span>
       </div>
    </div>
@@ -27,8 +27,4 @@
 <script type="text/javascript" src="<?=base_url();?>assets/js/jquery.maskMoney.js"></script>
 <script type="text/javascript" src="<?=base_url();?>assets/js/jquery.dynatable.js"></script>
 <script type="text/javascript" src="<?=base_url();?>assets/js/highcharts.js"></script>
-
-<script type="text/javascript">
-   $('#save-and-go-back-button').hide();
-</script>
 </body>

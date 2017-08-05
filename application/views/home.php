@@ -1,70 +1,56 @@
 
-   <!-- main-slider -->
-      <ul id="demo1">
-         <li>
-            <img src="<?=base_url();?>assets/img/slideshow/1.jpg" alt="" />
-            <!--Slider Description example-->
-            <!-- <div class="slide-desc">
-               <h3>Buy Rice Products Are Now On Line With Us</h3>
-            </div> -->
-         </li>
-         <li>
-            <img src="<?=base_url();?>assets/img/slideshow/2.jpg" alt="" />
-              <!-- <div class="slide-desc">
-               <h3>Whole Spices Products Are Now On Line With Us</h3>
-            </div> -->
-         </li>
-         
-      </ul>
-   <!-- //main-slider -->
-   <!-- //top-header and slider -->
-<!-- new -->
-   <div class="newproducts-w3agile">
-      <div class="container">
-         <h3>PRODUK</h3>
-            <div class="agile_top_brands_grids">
-            <?php
-               foreach ($product as $p) {
-            ?>
-               <div class="col-md-3 top_brand_left-1">
-                  <div class="hover14 column">
-                     <div class="agile_top_brand_left_grid">
-                        <!-- <div class="agile_top_brand_left_grid_pos">
-                           <div class="tanda">OFFER</div>
-                        </div> -->
-                        <div class="agile_top_brand_left_grid1">
-                           <figure>
-                              <div class="snipcart-item block">
-                                 <div class="snipcart-thumb">
-                                    <a href='<?=base_url("home/detail_product/$p->links");?>'><img title=" " alt=" " src="<?=base_url("assets/img/products/$p->images");?>"></a>    
-                                    <p><a href='<?=base_url("home/detail_product/$p->links");?>'><?=$p->product;?></a></p>
-                                    <div class="stars">
-                                       <!--RATING-->
-                                    </div>
-                                       <h4>Rp <?=$p->price;?></h4>
-                                 </div>
-                                 <div class="snipcart-details top_brand_home_details">
-                                    <form action="#" method="post">
-                                       <fieldset>
-                                          <input  id="id_product" value="1" style="display: none;">
-                                          <input  id="qty_<?=$p->id_product;?>" value="1" style="display: none;">
-                                          <input  id="nm_brg_<?=$p->id_product;?>" value="<?=$p->product;?>" style="display: none;">
-                                          <input  id="price_<?=$p->id_product;?>" value="<?=$p->price;?>" style="display: none;">
-                                          <button id="add_cart" type="button" name="submit"  value="Add to cart" class="btn btn-primary" id="add_cart" onclick="tambah_cart(<?=$p->id_product;?>);">
-                                          <i class="fa fa-cart-arrow-down"></i> Add to Cart</button>
-
-                                       </fieldset>
-                                    </form>
-                                 </div>
-                              </div>
-                           </figure>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            <?php } ?>
-                  <div class="clearfix"> </div>
-            </div>
+      <div class="jumbotron hero-technology">
+        <h1 class="hero-title">MarketPlace </h1>
+        <p class="hero-subtitle">Kemudahan dalam bertransaksi jual beli online</p>
       </div>
-   </div>
-<!-- //new -->
+      <div class="row">
+      <div class="container">
+      <h3 class="text-left text-danger">Kategori </h3>
+        <div class="col-sm-3">
+         <ul class="list-group">
+          <?php 
+          foreach ($kategori as $k) { ?>
+            <li class="list-group-item"><a href='<?=site_url("product/kategori/$k->id_kategori");?>'><?=$k->kategori;?></a></li>
+          <?php } ?>
+         </ul>
+         </div>
+        <div class="pull-right">
+            <form method="post" class="form-inline">
+            <div class="form-group">
+              <input type="text" class="form-control" name="search">
+            </div>
+            <div class="form-group">
+              <select class="form-control" name="kategori">
+                <option value="*">Semua Kategori</option>
+                <?php
+                  foreach ($kategori as $k) {
+                    echo "<option value=$k->id_kategori>$k->kategori</option>";
+                  }
+                ?>
+              </select>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary" type="submit">Cari</button>
+            </div>
+            </form>
+          </div>
+            <br><br>
+        <?php
+          foreach ($produk as $p) {
+        ?>
+        <div class="col-sm-3 col-lg-3 col-md-3">
+            <div class="thumbnail">
+               <img src='<?=base_url("gambar/$p->photo");?>' alt="" class="img-responsive" width="300" height="300">
+               <div class="caption">
+                  <p class="p-header"><a href='<?=base_url("detail_product/$p->id_brg");?>'><?=$p->nama_brg;?></a></p>
+                  <p class="p-cost">Rp <?=number_format($p->harga,0,".",".");?></p>
+                  <p><?=substr($p->deskripsi,0,15);?> . . . </p>
+                  <p class="p-store"><i class="fa fa-home"></i> Toko A</p>
+                  <p class="p-store"><i class="fa fa-marker"></i> Lokasi </p>
+               </div>
+            </div>
+        </div>
+      <?php } ?>
+      </div>
+      </div>
+   

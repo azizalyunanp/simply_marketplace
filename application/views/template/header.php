@@ -1,93 +1,92 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Toko Buku RAHMA</title>
-<!-- for-mobile-apps -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="TOKO BUKU RAHMA Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-      function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //for-mobile-apps -->
-<link href="<?=base_url();?>assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="<?=base_url();?>assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!-- font-awesome icons -->
-<link href="<?=base_url();?>assets/css/font-awesome.css" rel="stylesheet"> 
-<!-- //font-awesome icons -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+    <link rel="stylesheet" href="<?=base_url();?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="<?=base_url();?>assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/css/styles.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/css/Pretty-Header.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/css/Material-Card.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/css/Hero-Technology.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/css/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/css/Google-Style-Login.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/css/sweetalert.css">
+<!--     <link rel="stylesheet" href="<?=base_url();?>assets/css/dataTables.bootstrap.min.css"> -->
+    <link rel="stylesheet" href="<?=base_url();?>assets/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="<?=base_url('assets/css/pikaday-package.min.css');?>">
+    <style type="text/css">
+        .p-header {
+            font-family: 'Calibri';
+            font-size: 16px;
+        }
 
-<link href="<?=base_url('assets/css/sweetalert.css');?>" rel="stylesheet">
+        .p-cost {
+            font-family: 'Calibri';
+            font-size: 14px;
+            color: red;
+        }
+
+        .p-store {
+            font-family: 'Calibri';
+            font-size: 14px;
+        }
+
+        .panel-footer {
+            height: 65px !important;
+        }
+
+        #sep {
+            margin-top: 10px;
+        }
+
+        .panel-body {
+            background: #f3f3f3 !important;
+        }
+        
+    </style>
+    <script type="text/javascript">
+        function konfirmasi() {
+            tanya = confirm("Hapus Data ?");
+            if (tanya == true) return true;
+            else return false;
+        }
+    </script>
 </head>
-   
-<body>
-<!-- header -->
-   <div class="agileits_header">
-      <div class="container">
-         <div class="w3l_offers">
-            <!--OFFERS-->
-         </div>
-         <div class="agile-login">
-            <ul>
-               <li><a href="<?=site_url('home/register');?>">Register</a></li>
-               <li><a href="<?=site_url('home/login');?>">Login</a></li>
-               <li><a href="#">Cara Order</a></li>
-               
-            </ul>
-         </div>
-         <div class="product_list_header">  
-               <form action="#" method="post" class="last"> 
-                  <input type="hidden" name="cmd" value="_cart">
-                  <input type="hidden" name="display" value="1">
-                  <a href="<?=site_url('home/checkout');?>" style="color: white;"><i class="fa fa-cart-arrow-down fa-2x" aria-hidden="true"></i> My Cart</a>
-                  <!-- <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button> -->
-               </form>  
-         </div>
-         <div class="clearfix"> </div>
-      </div>
-   </div>
 
-   <div class="logo_products">
-      <div class="container">
-      <div class="w3ls_logo_products_left1">
-            <ul class="phone_email">
-               <li><i class="fa fa-phone" aria-hidden="true"></i> Telepon kami : 0271-7655232</li>
-            </ul>
-         </div>
-         <div class="w3ls_logo_products_left">
-            <img src="<?=base_url('assets/img/logo.png');?>">
-         </div>
-      <div class="w3l_search">
-         <form action="#" method="post">
-            <input type="search" name="Search" placeholder="Search for a Product..." required="">
-            <button type="submit" class="btn btn-default search" aria-label="Left Align">
-               <i class="fa fa-search" aria-hidden="true"> </i>
-            </button>
-            <div class="clearfix"></div>
-         </form>
-      </div>
-         
-         <div class="clearfix"> </div>
-      </div>
-   </div>
-   <div class="navigation-agileits">
-      <div class="container">
-         <nav class="navbar navbar-default">
-            <div class="navbar-header nav_2">
-               <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-               </button>
-            </div> 
-            <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-               <ul class="nav navbar-nav">
-                  <li><a href="<?=site_url('home');?>" class="act">Home</a></li>
-                  <li><a href="<?=site_url('home/produk');?>">Produk</a></li>
-                  <li><a href="#">Kontak</a></li>
-               </ul>
+<body>
+    <nav class="navbar navbar-default custom-header">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="<?=base_url('home');?>">Marketplace </a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             </div>
-         </nav>
-      </div>
-   </div>   
-<!-- //navigation -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">         
+                <ul class="nav navbar-nav  navbar-links navbar-right">
+                <?php
+                if(!$this->session->userdata('username')) { 
+                ?>
+                    <li role="presentation"><a href="<?=base_url('register');?>">DAFTAR</a></li>
+                    <li role="presentation"><a href="<?=base_url('login');?>">MASUK</a></li>
+                <?php } ?>
+                	<?php
+                    if($this->session->has_userdata('username')) { ?>
+                    <li><a href="<?=base_url('keranjang');?>"><i class="fa fa-shopping-cart fa-2x" style="color: white;"></i><span class="badge">1</span> </a>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"> <span class="caret"></span><img src="<?=base_url();?>assets/img/avatar.jpg" class="dropdown-image"></a>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="<?=base_url('users');?>">Profile <?=$this->session->has_userdata('id_toko');?></a></li>
+                            <li role="presentation"><a href="#">Settings </a></li>
+                            <li role="presentation"><a href="#">Payments </a></li>
+                            <li role="presentation"><a href="<?=base_url('logout');?>">Logout </a></li>
+                        </ul>
+                    </li>
+                    <?php } ?>
+                </ul>
+
+            </div>
+        </div>
+    </nav>

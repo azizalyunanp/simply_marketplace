@@ -58,7 +58,8 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database','session','grocery_CRUD','cart');
+$autoload['libraries'] = array('database','session','encryption','grocery_crud'
+	,'upload','cart','rajaongkir');
 
 /*
 | -------------------------------------------------------------------
@@ -89,7 +90,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url','file','form');
+$autoload['helper'] = array('url', 'file','form','html');
 
 /*
 | -------------------------------------------------------------------
